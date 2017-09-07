@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <input type="button" value="Get Name">
+        <div class="name"></div>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script>
+            $("input").click(function() {
+                $.get("https://api.github.com/users/chaocharliehuang", displayName);
+                function displayName(data) {
+                    $(".name").html("<h1>" + data.name + "</h1>");
+                }
+            });
+        </script>
+    </body>
+</html>
